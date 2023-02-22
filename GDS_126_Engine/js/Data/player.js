@@ -37,7 +37,7 @@ var playerData ={
 		//The walwidth:128, height:128,
 		walk:
 		{
-			fps:100,
+			fps:1,
 			cycle:true,
 			frames:
 			[
