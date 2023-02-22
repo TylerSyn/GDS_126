@@ -61,7 +61,7 @@ var playerData ={
 		//The crouch animation 
 		crouch:
 		{
-			fps:15,
+			fps:1,
 			cycle:true,
 			frames:
 			[
