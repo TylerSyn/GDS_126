@@ -66,8 +66,8 @@ sky.img.src = `images/sky background copy.png`
 */
 
 //repeating background
-var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/background back copy.png`
+var rbgb = new GameObject({x:level.x, y:level.y, width:1024, height:256})
+rbgb.img.src=`images/background back copy.png`
 
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
 rbg.img.src=`images/background front.png`
@@ -241,6 +241,7 @@ gameStates[`level1`] = function()
 
 	//moves repeating background
 	rbg.x = level.x*.5;
+	rbgb.x = level.x*.25;
 
 	//moves the middleground
 	bg.x = level.x*.75;
@@ -270,6 +271,10 @@ gameStates[`level1`] = function()
 	sky.render()
 	
 	//Renders the repeating background
+	rbgb.drawStaticImage([0,256]);
+	rbgb.drawStaticImage([-rbg.width,256]);
+	rbgb.drawStaticImage([rbg.width,256]);
+
 	rbg.drawStaticImage([0,0]);
 	rbg.drawStaticImage([-rbg.width,0]);
 	rbg.drawStaticImage([rbg.width,0]);
