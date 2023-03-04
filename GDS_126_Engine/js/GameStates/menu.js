@@ -10,7 +10,7 @@ console.log(startButton.collisionPoints.right)
 
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/mrt.jpg"
+menuBackground.img.src = "images/game start copy.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
@@ -26,16 +26,16 @@ gameStates[`menu`] =function(){
 		}
 
 		//Hover Effect Graffic
-		startButton.color = `yellow`
+		startButton.img.src = "images/start button hover.png"
 	}
 	else
 	{
 		//Default Button Graphic
-		startButton.color = `red`
+		startButton.img.src = "images/start button.png"
 	}
 	
 	menuBackground.drawStaticImage();
-	startButton.render()
+	startButton.drawStaticImage();
 }
 	
 	
