@@ -13,7 +13,7 @@ var caveData ={
 			
 			
 		],
-		src:`images/bg2.png`,
+		src:`images/tilesheet saloon copy.png`,
 	},
 	states:
 	[		
@@ -21,48 +21,48 @@ var caveData ={
 				fps:5,
 				cycle:false,
 				frames:[
-					{width:64, height:64, startX:0, startY:0}
+					{width:256, height:256, startX:0, startY:0}
 				]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:64, startY:0}]
+				frames:[{width:256, height:256, startX:256, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:128, startY:0}]
+				frames:[{width:256, height:256, startX:256*2, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:192, startY:0}]
+				frames:[{width:256, height:256, startX:256*3, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:256, startY:0}]
+				frames:[{width:256, height:256, startX:256*4, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:320, startY:0}]
+				frames:[{width:256, height:256, startX:256*5, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:384, startY:0}]
+				frames:[{width:256, height:256, startX:256*6, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:448, startY:0}]
+				frames:[{width:256, height:256, startX:256*7, startY:0}]
 			},
 			{
 				fps:1,
 				cycle:false,
-				frames:[{width:64, height:64, startX:512, startY:0}]
+				frames:[{width:256, height:256, startX:256*8, startY:0}]
 			}
 		]
 	}
@@ -77,7 +77,7 @@ var caveData ={
 			[3,8,8,8,8,3,3,3,3,3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
 			[3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
 			],
-			src:`images/bg2.png`,
+			src:`images/tilesheet saloon copy.png`,
 		},
 		states:caveData.states
 		}
@@ -96,7 +96,7 @@ var caveData ={
 					
 					
 				],
-				src:`images/bg2.png`,
+				src:`images/tilesheet saloon copy.png`,
 			},
 			states:caveData.states
 			
