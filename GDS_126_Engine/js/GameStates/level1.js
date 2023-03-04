@@ -11,10 +11,11 @@ wiz.force=1
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2,height:64,y:canvas.height-32, color:"green"})
-ground.img.src=`images/platform copy.png`
+ground.img.src=`images/ground copy.png`
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
+plat.img.src=`images/platform copy.png`
 
 //A level object when it is moved other objects move with it.
 var level = new GameObject({x:0,y:0});
