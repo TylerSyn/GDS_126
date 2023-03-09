@@ -23,7 +23,7 @@ ground.world = level;
 plat.world = level;
 
 //Cave foreground Tile Grid
-var cave = new Grid(caveData, {world:level, x:1024, tileHeight:64, tileWidth:64});
+var cave = new Grid(caveData, {world:level, x:1024, tileHeight:64, tileWidth:64, color:"black"});
 //Cave background Tile Grid
 var caveBack = new Grid(caveBackData, {world:level, x:1024, tileHeight:64, tileWidth:64});
 //cave hitbox grid
