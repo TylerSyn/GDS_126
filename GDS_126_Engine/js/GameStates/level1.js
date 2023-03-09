@@ -89,9 +89,9 @@ for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
 	//bullets[i].img.src="images/mrt.jpg"
-	bullets[i].makeSprite(playerData)
+	bullets[i].makeSprite(bulletData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`walk`)
+	bullets[i].changeState(`idle`)
 }
 
 //console.log(bullets)
