@@ -4,11 +4,11 @@ var caveData ={
 		layout:[
 			[2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
 			[2,x,x,7,x,x,7,x,x,x,x,x,x,7,7,x,7,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-			[2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-			[6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-			[5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-			[6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-			[6,x,x,x,x,x,x,x,x,x,x,6,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+			[2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,x,2],
+			[6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,5,x,5,x,2],
+			[5,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,6,6,6,x,x,x,x,x,6,6,6,6,x,x,5,x,5,x,2],
+			[6,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,x,x,6,6,x,x,x,x,5,5,5,5,x,x,6,6,6,x,2],
+			[6,x,x,x,x,x,x,x,x,x,x,6,6,6,5,5,x,x,6,6,6,x,x,x,5,5,5,5,x,x,x,6,x,x,2],
 			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x]
 			
 			
@@ -89,9 +89,9 @@ var caveData ={
 					[2,x,x,7,x,x,7,x,x,x,x,x,x,7,7,x,7,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
 					[2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
 					[6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,6,6,6,x,x,x,x,x,6,6,6,6,x,x,x,x,x,x,2],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,6,6,x,x,x,x,x,x,x,x,x,x,6,6,6,x,2],
+					[x,x,x,x,x,x,x,x,x,x,x,6,6,6,x,x,x,x,6,6,6,x,x,x,x,x,x,x,x,x,x,6,x,x,2],
 					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2]
 					
 					
