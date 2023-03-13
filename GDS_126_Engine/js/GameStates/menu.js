@@ -22,7 +22,9 @@ gameStates[`menu`] =function(){
 		if(mouse.pressed)
 		{
 			//Changes to the game state
+			sounds.play("backgroundMusic",0,true)
 			gameStates.changeState(`level1`)
+			
 		}
 
 		//Hover Effect Graffic
