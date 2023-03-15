@@ -15,7 +15,7 @@ ground.img.src=`images/ground copy.png`
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
-plat.img.src=`images/platform copy.png`
+plat.img.src=`images/platform floating.png`
 
 //A level object when it is moved other objects move with it.
 var level = new GameObject({x:0,y:0});
@@ -43,7 +43,7 @@ g1.add([ground,leftBorder, caveHit.grid])
 
 //Used to draw the rectangles
 var rects = new Group();
-rects.add([ground,plat])
+rects.add([ground])
 
 //used to render the sprites
 var sprites = new Group();
@@ -291,6 +291,7 @@ gameStates[`level1`] = function()
 
 	//renders the objects in the rect group
 	rects.render(`drawRect`, [0,0,100,100])
+	plat.drawStaticImage([-plat.width/2,-plat.height/2-5])
 	
 	/*----Used for debugging----*/
 	/*context.beginPath()
