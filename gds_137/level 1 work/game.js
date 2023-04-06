@@ -12,7 +12,7 @@ var ball;
 	
 
 	ball = new Ball();
-	//ball.vx = -5;
+	ball.vx = -5;
 	
 
 	timer = setInterval(animate, interval);
@@ -23,33 +23,40 @@ context.save();
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
 
-    this.count = function()
-    {
-        //this.trial=this.trail+1;
-        console.log("animate function")
-    }
-    this.count();
 
+  ball.move();
 
 	if(ball.x < 0 + ball.width/2)
 	{
 		ball.x = 0 + ball.width/2;
-		ball.vx= ball.vx * -1.02;
+		ball.vx= ball.vx * -1;
 	}
 
 	if(ball.x > canvas.width - ball.width/2)
 	{
 		ball.x == canvas.width - ball.width/2;
-		ball.vx= ball.vx * -1.02;
+		ball.vx= ball.vx * -1;
+	}
+
+	if(ball.y < 0 + ball.height/2)
+	{
+		ball.y = 0 + ball.height/2;
+		ball.vy= ball.vy * -1;
+	}
+
+	if(ball.y > canvas.height - ball.height/2)
+	{
+		ball.y == canvas.height - ball.height/2;
+		ball.vy= ball.vy * -1;
 	}
 
 	
 
 	ball.draw();
 
-    ball.move();
+  
 
-	context.restore();
+	//context.restore();
 
 }
 
