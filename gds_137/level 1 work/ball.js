@@ -1,31 +1,89 @@
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
+//var canvas = document.getElementById("canvas");
+//var context = canvas.getContext("2d");
+//var mainTimer = setInterval(animate, 1000/60);
 
-
-context.beginPath();
-context.arc(100, 75, 50, 0, 2 * Math.PI);
-context.stroke();
+function Ball()
+{
 
 this.x=0;
 this.y=0;
 this.width=20;
-this.height=0;
-this.color="pink";
-this.force;
-this.vy;
-this.vx;
+this.height=20;
+this.color="#f542f5";
+//this.force;
+this.vy=5;
+this.vx=5;
+
+this.trial=0;
+
+
 
 
 this.draw = function()
 {
+    context.save();
     context.beginPath();
-    context.arc(this.x,this.y,this.width,0,360*Math.PI/180,true)
+    context.arc(canvas.width/2,canvas.height/2,this.width,0,360*Math.PI/180,true)
     context.closePath();
+    context.fillStyle= this.color;
     context.fill();
+    context.restore();
+
+
+
+
+//animate();
+
+//var ball = new Ball();
+
+
+
+
 }
 
+/*function animate()
+{
+//Clear the Canvas
+//context.clearRect(0,0,canvas.width,canvas.height)
+context.save();
+//Move the Ball
 this.draw();
+this.move();
 
-//var ball = new ball();
+//Update the Canvas
+//this.draw;
+context.restore();
+}
+*/
 
-//ball.draw();
+
+
+this.move = function()
+{
+
+
+    /*this.count = function()
+    {
+        this.trial=this.trail+1;
+        console.log(this.trial)
+    }
+    this.count();
+*/
+
+this.x = this.x+this.vx;
+this.y = this.y + this.vy;
+
+this.count = function()
+{
+    this.trial=this.trail+1;
+    console.log(this.trial)
+}
+this.count();
+
+    this.x += this.vx;
+    this.y += this.vy;
+}
+}
+
+
+
