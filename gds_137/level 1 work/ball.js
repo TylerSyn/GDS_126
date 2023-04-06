@@ -62,21 +62,14 @@ this.move = function()
 {
 
 
-    /*this.count = function()
-    {
-        this.trial=this.trail+1;
-        console.log(this.trial)
-    }
-    this.count();
-*/
 
-this.x = this.x+this.vx;
+this.x = this.x + this.vx;
 this.y = this.y + this.vy;
 
 this.count = function()
 {
-    this.trial=this.trail+1;
-    console.log(this.trial)
+   // this.trial=this.trail+1;
+    console.log("move function")
 }
 this.count();
 

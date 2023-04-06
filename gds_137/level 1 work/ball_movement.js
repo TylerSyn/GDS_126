@@ -19,14 +19,14 @@ var ball;
 
 function animate()
 {
-
+context.save();
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
 
     this.count = function()
     {
-        this.trial=this.trail+1;
-        console.log(this.trial)
+        //this.trial=this.trail+1;
+        console.log("animate function")
     }
     this.count();
 
@@ -48,6 +48,8 @@ function animate()
 	ball.draw();
 
     ball.move();
+
+	context.restore();
 
 }
 
