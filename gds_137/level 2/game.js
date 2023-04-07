@@ -18,7 +18,10 @@ var ball = new GameObject();
 
 ball.height = 20;
 ball.width = 20;
-
+ball.x=canvas.width/2;
+ball.y=canvas.height/2;
+ball.vy = 2;
+ball.vx=2;
 
 function animate()
  {
@@ -31,23 +34,23 @@ function animate()
 
     if (w) 
     {
-        console.log("down");
-        player1.y += -2;
+        console.log("up");
+        player1.y += -player1.vy;
     }
     if (s) 
     {
-        console.log("up");
-        player1.y += 2;
+        console.log("down");
+        player1.y += player1.vy;
     }
 
 
     if (player1.y + player1.height / 2 > 800)
      {
-        player1.y += -2;
+        player1.y += -5;
     }
     if (player1.y - player1.height / 2 < 0) 
     {
-        player1.y += 2;
+        player1.y += 5;
     }
 
 
@@ -63,36 +66,47 @@ function animate()
         return Math.random() * (high - low) + low;
     }
 
-    if (ball.x < 0 + ball.width / 2) 
+    if (ball.x < 0 - ball.width / 2) 
     {
-        ball.x = 0 + ball.width / 2;
-        ball.vx = ball.vx * -1.001;
-        ball.color = `rgb(${randomRange(255, 0)},${randomRange(255, 0)},${randomRange(255, 0)})`;
+        ball.x =  canvas.width/2;
+        ball.y = canvas.height/2
+
+        ball.vx = ball.vx * -1;
+    
     }
 
     if (ball.x > canvas.width - ball.width / 2)
      {
         ball.x == canvas.width - ball.width / 2;
-        ball.vx = ball.vx * -1.001;
+        ball.vx = ball.vx * -1;
         ball.color = `rgb(${randomRange(255, 0)},${randomRange(255, 0)},${randomRange(255, 0)})`;
     }
 
     if (ball.y < 0 + ball.height / 2)
      {
         ball.y = 0 + ball.height / 2;
-        ball.vy = ball.vy * -1.001;
+        ball.vy = ball.vy * -1;
         ball.color = `rgb(${randomRange(255, 0)},${randomRange(255, 0)},${randomRange(255, 0)})`;
     }
 
     if (ball.y > canvas.height - ball.height / 2) 
     {
         ball.y == canvas.height - ball.height / 2;
-        ball.vy = ball.vy * -1.001;
+        ball.vy = ball.vy * -1;
         ball.color = `rgb(${randomRange(255, 0)},${randomRange(255, 0)},${randomRange(255, 0)})`
     }
 
 
 
     ball.drawCircle();
+
+if(player1.hitTestObject(ball)===true)
+{
+    console.log("ball hit")
+    ball.vx = ball.vx * -1;
+    ball.x = ball.x + ball.width/2/*player1.right()/2*/;
+}
+    
+    
 
 }

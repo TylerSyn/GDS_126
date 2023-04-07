@@ -3,14 +3,14 @@
 function GameObject()
 {
 
-this.x=10;
+this.x=5;
 this.y=canvas.height/2;
-this.width=20;
+this.width=10;
 this.height=160;
 this.color = "#f542f5";
 //this.force;
-this.vy=2;
-this.vx=2;
+this.vy=5;
+this.vx=5;
 
 
 
@@ -38,6 +38,9 @@ this.drawRect = function()
     context.fillRect((-this.width/2), (-this.height/2), this.width, this.height);
     context.restore();
 
+
+    //circles for bounding
+    /*
     context.save();
     context.beginPath();
     context.translate(this.x,this.top());
@@ -73,21 +76,10 @@ this.drawRect = function()
     context.fillStyle= `red`;
     context.fill();
     context.restore();
+    */
 
 }
-/*
-this.drawRegister = function()
-{
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.top);
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= this.color;
-    context.fill();
-    context.restore();
-}
-*/
+
 
 
 
