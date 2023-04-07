@@ -52,6 +52,17 @@ function animate()
 		player1.y += 2;
 	}
 
+
+        if (player1.y + player1.height/2 > 800)
+        {
+            player1.y  += -2;
+        }
+        if (player1.y - player1.height/2 <0)
+        {
+            player1.y  += 2;
+        }
+
+
 player1.drawRect();
 
 }
