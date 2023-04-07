@@ -40,4 +40,18 @@ function animate()
 	
 	//Update the Screen
 	player1.drawRect();
+
+    if(w)
+	{
+		console.log("down");
+		player1.y += -2;
+	}
+	if(s)
+	{
+		console.log("up");
+		player1.y += 2;
+	}
+
+player1.drawRect();
+
 }
