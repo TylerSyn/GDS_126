@@ -32,28 +32,28 @@ function randomRange(high,low)
 	if(ball.x < 0 + ball.width/2)
 	{
 		ball.x = 0 + ball.width/2;
-		ball.vx= ball.vx * -1;
+		ball.vx= ball.vx * -1.001;
 		ball.color = `rgb(${randomRange(255,0)},${randomRange(255,0)},${randomRange(255,0)})`
 	}
 
 	if(ball.x > canvas.width - ball.width/2)
 	{
 		ball.x == canvas.width - ball.width/2;
-		ball.vx= ball.vx * -1;
+		ball.vx= ball.vx * -1.001;
 		ball.color = `rgb(${randomRange(255,0)},${randomRange(255,0)},${randomRange(255,0)})`
 	}
 
 	if(ball.y < 0 + ball.height/2)
 	{
 		ball.y = 0 + ball.height/2;
-		ball.vy= ball.vy * -1;
+		ball.vy= ball.vy * -1.001;
 		ball.color = `rgb(${randomRange(255,0)},${randomRange(255,0)},${randomRange(255,0)})`
 	}
 
 	if(ball.y > canvas.height - ball.height/2)
 	{
 		ball.y == canvas.height - ball.height/2;
-		ball.vy= ball.vy * -1;
+		ball.vy= ball.vy * -1.001;
 		ball.color = `rgb(${randomRange(255,0)},${randomRange(255,0)},${randomRange(255,0)})`
 	}
 
