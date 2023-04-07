@@ -16,6 +16,7 @@ this.vx=2;
 
 
 
+
 this.drawCircle = function()
 {
     context.save();
@@ -37,7 +38,57 @@ this.drawRect = function()
     context.fillRect((-this.width/2), (-this.height/2), this.width, this.height);
     context.restore();
 
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.top());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.bottom());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+    context.save();
+
+    context.beginPath();
+    context.translate(this.left(),this.y);
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
+    context.save();
+    context.beginPath();
+    context.translate(this.right(),this.y);
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
 }
+/*
+this.drawRegister = function()
+{
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.top);
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= this.color;
+    context.fill();
+    context.restore();
+}
+*/
+
 
 
 this.move = function()
@@ -49,4 +100,38 @@ this.y = this.y + this.vy;
     this.x += this.vx;
     this.y += this.vy;
 }
+
+
+
+this.left = function() 
+	{
+		return this.x - this.width/2;
+	}
+	this.right = function() 
+	{
+		return this.x + this.width/2;
+	}
+	
+	this.top = function() 
+	{
+		return this.y - this.height/2;
+	}
+	this.bottom = function() 
+	{
+		return this.y + this.height/2;
+	}
+	
+	this.hitTestObject = function(obj)
+	{
+		if(this.left() < obj.right() && 
+		   this.right() > obj.left() &&
+		   this.top() < obj.bottom() &&
+		   this.bottom() > obj.top())
+		{
+			return true
+		}
+		return false;
+	}
+	
+
 }

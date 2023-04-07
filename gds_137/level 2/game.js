@@ -13,7 +13,8 @@ context = canvas.getContext("2d");
 timer = setInterval(animate, interval);
 
 var player1 = new GameObject();
-var ball = new GameObject()
+var ball = new GameObject();
+
 
 ball.height = 20;
 ball.width = 20;
