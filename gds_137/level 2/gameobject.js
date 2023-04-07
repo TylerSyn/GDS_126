@@ -1,6 +1,4 @@
-//var canvas = document.getElementById("canvas");
-//var context = canvas.getContext("2d");
-//var mainTimer = setInterval(animate, 1000/60);
+
 
 function GameObject()
 {
@@ -9,12 +7,11 @@ this.x=10;
 this.y=canvas.height/2;
 this.width=20;
 this.height=160;
-this.color="#f542f5";
+this.color = "#f542f5";
 //this.force;
-this.vy=5;
-this.vx=5;
+this.vy=2;
+this.vx=2;
 
-this.trial=0;
 
 
 
@@ -42,22 +39,6 @@ this.drawRect = function()
 
 }
 
-/*function animate()
-{
-//Clear the Canvas
-//context.clearRect(0,0,canvas.width,canvas.height)
-context.save();
-//Move the Ball
-this.draw();
-this.move();
-
-//Update the Canvas
-//this.draw;
-context.restore();
-}
-*/
-
-
 
 this.move = function()
 {
@@ -69,6 +50,3 @@ this.y = this.y + this.vy;
     this.y += this.vy;
 }
 }
-
-
-
