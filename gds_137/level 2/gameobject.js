@@ -5,10 +5,10 @@
 function GameObject()
 {
 
-this.x=40;
+this.x=10;
 this.y=canvas.height/2;
 this.width=20;
-this.height=100;
+this.height=160;
 this.color="#f542f5";
 //this.force;
 this.vy=5;
