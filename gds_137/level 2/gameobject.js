@@ -40,7 +40,16 @@ this.drawRect = function()
 
 
     //circles for bounding
-    /*
+    
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.top() - this.size());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
     context.save();
     context.beginPath();
     context.translate(this.x,this.top());
@@ -49,6 +58,16 @@ this.drawRect = function()
     context.fillStyle= `red`;
     context.fill();
     context.restore();
+
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.bottom() + this.size());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+    context.save();
 
     context.save();
     context.beginPath();
@@ -76,11 +95,15 @@ this.drawRect = function()
     context.fillStyle= `red`;
     context.fill();
     context.restore();
-    */
+
+
 
 }
 
-
+this.size = function()
+{
+    return this.height/6 * 2;
+}
 
 
 this.move = function()
@@ -106,19 +129,45 @@ this.left = function()
 	
 	this.top = function() 
 	{
-		return this.y - this.height/2;
+		return this.y - this.height/6;
 	}
 	this.bottom = function() 
 	{
-		return this.y + this.height/2;
-	}
+		return this.y + this.height/6;
+    }
 	
-	this.hitTestObject = function(obj)
+	this.midhitTestObject = function(obj)
 	{
 		if(this.left() < obj.right() && 
 		   this.right() > obj.left() &&
 		   this.top() < obj.bottom() &&
 		   this.bottom() > obj.top())
+		{
+			return true
+		}
+
+
+		return false;
+	}
+
+    this.tophitTestObject = function(obj)
+	{
+		if(this.left() < obj.right() && 
+		   this.right() > obj.left() &&
+		   this.top()-this.size() < obj.bottom() &&
+		   this.bottom()-this.size() > obj.top())
+		{
+			return true
+		}
+		return false;
+	}
+
+    this.bottomhitTestObject = function(obj)
+	{
+		if(this.left() < obj.right() && 
+		   this.right() > obj.left() &&
+		   this.top()+this.size() < obj.bottom() &&
+		   this.bottom()+this.size() > obj.top())
 		{
 			return true
 		}

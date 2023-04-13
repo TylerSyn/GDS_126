@@ -100,13 +100,34 @@ function animate()
 
     ball.drawCircle();
 
-if(player1.hitTestObject(ball)===true)
+if(player1.midhitTestObject(ball)===true)
 {
     console.log("ball hit")
+
     ball.vx = ball.vx * -1;
     ball.x = ball.x + ball.width/2/*player1.right()/2*/;
 }
-    
+
+
+if(player1.tophitTestObject(ball)===true)
+{
+    console.log("ball hit")
+
+    ball.vx = ball.vx * -1;
+    ball.vy = -1;
+    ball.x = ball.x + ball.width/2/*player1.right()/2*/;
+}
+
+
+if(player1.bottomhitTestObject(ball)===true)
+{
+    console.log("ball hit")
+
+    ball.vx = ball.vx * -1;
+    ball.vy = 1;
+    ball.x = ball.x + ball.width/2/*player1.right()/2*/;
+
+}
     
 
 }
