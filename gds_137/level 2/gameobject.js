@@ -100,6 +100,89 @@ this.drawRect = function()
 
 }
 
+this.drawCircle = function()
+{
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.y);
+    context.arc(0,0,this.width/2,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= this.color;
+    context.fill();
+    context.restore();
+
+}
+
+this.drawRect2 = function()
+{
+    context.save();
+    context.fillStyle = 'blue';
+    context.translate(this.x, this.y);
+    context.fillRect((-this.width/2), (-this.height/2), this.width, this.height);
+    context.restore();
+
+
+    //circles for bounding
+    
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.top() - this.size());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.top());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.bottom() + this.size());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+    context.save();
+
+    context.save();
+    context.beginPath();
+    context.translate(this.x,this.bottom());
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+    context.save();
+
+    context.beginPath();
+    context.translate(this.left(),this.y);
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
+    context.save();
+    context.beginPath();
+    context.translate(this.right(),this.y);
+    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
+    context.closePath();
+    context.fillStyle= `red`;
+    context.fill();
+    context.restore();
+
+
+
+}
+
 this.size = function()
 {
     return this.height/6 * 2;
@@ -175,4 +258,44 @@ this.left = function()
 	}
 	
 
+
+
+    this.midhitTestObject2 = function(obj)
+	{
+		if(this.left() > obj.right() && 
+		   this.right() < obj.left() &&
+		   this.top() < obj.bottom() &&
+		   this.bottom() > obj.top())
+		{
+			return true
+		}
+
+
+		return false;
+	}
+
+    this.tophitTestObject2 = function(obj)
+	{
+		if(this.left() < obj.right() && 
+		   this.right() > obj.left() &&
+		   this.top()-this.size() < obj.bottom() &&
+		   this.bottom()-this.size() > obj.top())
+		{
+			return true
+		}
+		return false;
+	}
+
+    this.bottomhitTestObject2 = function(obj)
+	{
+		if(this.left() > obj.right() && 
+		   this.right() < obj.left() &&
+		   this.top()+this.size() < obj.bottom() &&
+		   this.bottom()+this.size() > obj.top())
+		{
+			return true
+		}
+		return false;
+	}
+	
 }
