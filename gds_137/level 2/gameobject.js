@@ -38,66 +38,6 @@ this.drawRect = function()
     context.fillRect((-this.width/2), (-this.height/2), this.width, this.height);
     context.restore();
 
-
-    //circles for bounding
-    
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.top() - this.size());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.top());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.bottom() + this.size());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-    context.save();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.bottom());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-    context.save();
-
-    context.beginPath();
-    context.translate(this.left(),this.y);
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.right(),this.y);
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-
-
 }
 
 this.drawCircle = function()
@@ -122,66 +62,11 @@ this.drawRect2 = function()
     context.restore();
 
 
-    //circles for bounding
-    
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.top() - this.size());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.top());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.bottom() + this.size());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-    context.save();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.x,this.bottom());
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-    context.save();
-
-    context.beginPath();
-    context.translate(this.left(),this.y);
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-    context.save();
-    context.beginPath();
-    context.translate(this.right(),this.y);
-    context.arc(0,0,this.width/4,0,360*Math.PI/180,true)
-    context.closePath();
-    context.fillStyle= `red`;
-    context.fill();
-    context.restore();
-
-
-
 }
+
+
+
+
 
 this.size = function()
 {

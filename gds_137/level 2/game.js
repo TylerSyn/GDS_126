@@ -6,6 +6,8 @@ var interval = 1000 / 60;
 var player1;
 var ball;
 var player1;
+var p1Score = 0;
+var p2Score = 0;
 
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
@@ -33,17 +35,35 @@ function animate()
     context.clearRect(0, 0, canvas.width, canvas.height);
 
 
+
+    drawscore = function()
+    {
+    context.save();
+    context.fillStyle = 'grey';
+    context.font = "20px ariel";
+    context.fillText("player 1    |     player 2 ",canvas.width/2 - 75, 15);
+    context.font = "18px ariel";
+    context.fillText(p1Score + " - " + p2Score,canvas.width/2 - 5, 30);
+
+    context.restore();
+    }
+
+    drawscore();
+    
+
+
+
     //Update the Screen
     player1.drawRect();
 
     if (w) 
     {
-        console.log("up");
+     //   console.log("up");
         player1.y += -player1.vy;
     }
     if (s) 
     {
-        console.log("down");
+     //   console.log("down");
         player1.y += player1.vy;
     }
 
@@ -65,12 +85,12 @@ function animate()
 
     if (up) 
     {
-        console.log("up p2");
+   //     console.log("up p2");
         player2.y += -player2.vy;
     }
     if (down) 
     {
-        console.log("down p2");
+    //    console.log("down p2");
         player2.y += player2.vy;
     }
 
@@ -101,6 +121,7 @@ function animate()
         ball.y = canvas.height/2
 
         ball.vx = ball.vx * -1;
+        p2Score += 1;
     
     }
 
@@ -111,6 +132,7 @@ function animate()
         ball.y = canvas.height/2
 
         ball.vx = ball.vx * -1;
+        p1Score += 1;
     
     }
 
@@ -134,7 +156,7 @@ function animate()
 
 if(player1.midhitTestObject(ball)===true)
 {
-    console.log("ball hit")
+   // console.log("ball hit")
 
     ball.vx = ball.vx * -1;
     ball.x = ball.x + ball.width/2/*player1.right()/2*/;
@@ -144,7 +166,7 @@ if(player1.midhitTestObject(ball)===true)
 
 if(player1.tophitTestObject(ball)===true)
 {
-    console.log("ball hit")
+  //  console.log("ball hit")
 
     ball.vx = ball.vx * -1;
     ball.vy = -1;
@@ -155,7 +177,7 @@ if(player1.tophitTestObject(ball)===true)
 
 if(player1.bottomhitTestObject(ball)===true)
 {
-    console.log("ball hit")
+ //   console.log("ball hit")
 
     ball.vx = ball.vx * -1;
     ball.vy = 1;
@@ -166,7 +188,7 @@ if(player1.bottomhitTestObject(ball)===true)
     
 if(player2.midhitTestObject(ball)===true)
 {
-    console.log("ball hit")
+  //  console.log("ball hit")
 
     ball.vx = ball.vx * -1;
     ball.x = ball.x - ball.width/2/*player1.right()/2*/;
@@ -176,7 +198,7 @@ if(player2.midhitTestObject(ball)===true)
 
 if(player2.tophitTestObject(ball)===true)
 {
-    console.log("ball hit")
+ //   console.log("ball hit")
 
     ball.vx = ball.vx * -1;
     ball.vy = -1;
@@ -187,7 +209,7 @@ if(player2.tophitTestObject(ball)===true)
 
 if(player2.bottomhitTestObject(ball)===true)
 {
-    console.log("ball hit")
+ //   console.log("ball hit")
 
     ball.vx = ball.vx * -1;
     ball.vy = 1;
