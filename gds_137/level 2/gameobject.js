@@ -11,7 +11,7 @@ this.color = "#f542f5";
 //this.force;
 this.vy=5;
 this.vx=5;
-
+var img=document.getElementById("ric");
 
 
 
@@ -45,7 +45,10 @@ this.drawCircle = function()
     context.save();
     context.beginPath();
     context.translate(this.x,this.y);
-    context.arc(0,0,this.width/2,0,360*Math.PI/180,true)
+    context.drawImage(img, 0-this.width, 0-this.height, this.width*2,this.height*2);
+    //context.arc(0,0,this.width/2,0,360*Math.PI/180,true)
+
+
     context.closePath();
     context.fillStyle= this.color;
     context.fill();

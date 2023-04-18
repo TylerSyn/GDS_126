@@ -8,6 +8,7 @@ var ball;
 var player1;
 var p1Score = 0;
 var p2Score = 0;
+var img=document.getElementById("ric");
 
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
