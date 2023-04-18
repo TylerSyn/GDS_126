@@ -34,24 +34,36 @@ function animate()
     //Erase the Screen
     context.clearRect(0, 0, canvas.width, canvas.height);
 
+drawline = function()
+{
+    context.save();
+    context.strokeStyle = 'red';
+    context.beginPath();
+    context.moveTo(canvas.width/2,0);
+    context.lineTo(canvas.width/2,canvas.height );
+    context.closePath();
+    context.lineWidth = 5; 
+    context.stroke();
+    context.restore();
+}
+
+drawline();
 
 
     drawscore = function()
     {
     context.save();
-    context.fillStyle = 'grey';
+    context.fillStyle = 'black';
     context.font = "20px ariel";
-    context.fillText("player 1    |     player 2 ",canvas.width/2 - 75, 15);
+    context.fillText("player 1    |     player 2 ",canvas.width/2 - 87, 15);
     context.font = "18px ariel";
-    context.fillText(p1Score + " - " + p2Score,canvas.width/2 - 5, 30);
+    context.fillText(p1Score + " - " + p2Score,canvas.width/2 - 17, 30);
 
     context.restore();
     }
 
     drawscore();
     
-
-
 
     //Update the Screen
     player1.drawRect();
