@@ -158,7 +158,7 @@ drawline();
 
     if (ball.y > canvas.height - ball.height / 2) 
     {
-        ball.y == canvas.height - ball.height / 2;
+        ball.y = canvas.height - ball.height / 2;
         ball.vy = ball.vy * -1;
         ball.color = `rgb(${randomRange(255, 0)},${randomRange(255, 0)},${randomRange(255, 0)})`
     }
