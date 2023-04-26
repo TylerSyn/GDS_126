@@ -61,8 +61,8 @@ this.hitBoxRects = function()
     context.save();
     context.fillStyle = 'red';
   //  context.translate(this.x, this.y);
-    context.fillRect(this.x-this.width/6 -2.5,this.y-this.height/2 - 2.5,5,5);
-    context.fillRect(this.x+this.width/6 -2.5,this.y-this.height/2 -2.5,5,5);
+  /*middle left*/   context.fillRect(this.x-this.width/6 -2.5,this.y-this.height/2 - 2.5,5,5);
+    /*middle right*/   context.fillRect(this.x+this.width/6 -2.5,this.y-this.height/2 -2.5,5,5);
 
     context.fillStyle = 'pink';
     context.fillRect(this.x+this.width/6+this.width/6 -2.5,this.y-this.height/2 -2.5,5,5);
@@ -95,17 +95,47 @@ this.y = this.y + this.vy;
     this.y += this.vy;
 }
 
-this.hitPlayer = function()
+
+this.left = function() 
 {
-    if(ball.y+40 > player.y - player.height/2)
+    return this.x - this.width/2;
+}
+this.right = function() 
+{
+    return this.x + this.width/2;
+}
+
+this.top = function() 
+{
+    return this.y - this.height/2;
+}
+this.bottom = function() 
+{
+    return this.y + this.height/2;
+}
+this.farLeft=function()
+{
+
+}
+this.middleRight = function()
+{
+return this.x + this.width/6
+}
+this.middleLeft = function()
+{
+ return this.x - this.width/6
+}
+
+this.hitTestObject = function(obj)
+{
+    if(this.left() < obj.middleLeft() && 
+       this.right() > obj.middleRight() &&
+       this.top() < obj.bottom() &&
+       this.bottom() > obj.top())
     {
-        if(ball.x > player.x - player.width/2 - 40 && ball.x < player.x +player.width/2 + 40)
-        {
-        ball.vy = -6;
-        }
-       
-        //go nto week 2 collision for collision code
+        return true;
     }
+    return false;
 }
 
 

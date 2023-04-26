@@ -9,6 +9,7 @@ var player;
 var score = 0;
 var scoreboard;
 var paddleLine;
+var friction = .9;
 
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
@@ -21,6 +22,7 @@ var player = new gameObject();
 var ball = new gameObject();
 var scoreboard = new gameObject();
 var paddleLine = new gameObject();
+
 
 //initial ball info
 ball.x = canvas.width/2;
@@ -41,16 +43,39 @@ function animate()
 //player movement
     if (a) 
     {
-     //   console.log("up");
-        player.x += -player.vx;
+
+        player.vx = player.vx * 1.02
     }
     if (d) 
     {
-     //   console.log("down");
-        player.x += player.vx;
+
+        player.vx = player.vx * 1.02
     }
+// acceleration
 
 
+
+    //friction
+  if(!d && !a)
+  {
+    player.vx *= friction
+  }
+if (player.vx > 10)
+{
+    player.vx=10
+}
+
+player.x += player.vx
+
+
+
+
+
+
+
+
+
+//player edges
     if (player.x + player.width / 2 > 1000)
     {
         player.x += -5;
@@ -60,7 +85,6 @@ function animate()
         player.x += 5;
     }
 
-    //ball gravity increase
  
 
     //ball bouncing
@@ -83,7 +107,15 @@ function animate()
 
 
     //player and ball collision
-    ball.hitPlayer();
+   if( ball.hitTestObject(player))
+   {
+    console.log("hit")
+    ball.vy = -5;
+    score ++;
+
+
+   }
+
  
 
 
