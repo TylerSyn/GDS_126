@@ -30,6 +30,7 @@ ball.y = canvas.height/2;
 ball.vx=0;
 ball.gravity = 1;
 ball.vy= 0;
+player.vx = 0;
 
 
 
@@ -58,6 +59,7 @@ function animate()
   {
     player.vx *= friction
   }
+
 if (player.vx > 10)
 {
     player.vx=10
@@ -78,13 +80,15 @@ player.x += player.vx
 
 
 //player edges
-    if (player.x + player.width / 2 > 1000)
+    if (player.x + player.width / 2 > canvas.width)
     {
-        player.x += -5;
+        player.x = canvas.width - player.width/2
+        //player.x += -player.vx;
     }
     if (player.x - player.width / 2 < 0) 
     {
-        player.x += 5;
+        player.x = 0 + player.width/2
+       // player.x += -player.vx;
     }
 
  
@@ -114,8 +118,11 @@ player.x += player.vx
     console.log("hit")
     ball.vy = -5;
     score ++;
+   }
 
-
+   if (ball.y > canvas.height - 50 )
+   {
+    score = 0;
    }
 
  
@@ -125,11 +132,11 @@ player.x += player.vx
 
 
 
-
+   
     //draw objects 
     player.drawRect();
-    ball.drawCircle();
     ball.move();
+    ball.drawCircle();
     player.hitBoxRects();
     paddleLine.drawLine();
     scoreboard.drawScore();
