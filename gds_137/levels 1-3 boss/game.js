@@ -40,19 +40,17 @@ function animate()
 
 
 
-//player movement
+//player acceleration
     if (a) 
     {
 
-        player.vx = player.vx * 1.02
+        player.vx += -1 * 1.02
     }
     if (d) 
     {
 
-        player.vx = player.vx * 1.02
+        player.vx += 1 * 1.02
     }
-// acceleration
-
 
 
     //friction
@@ -64,7 +62,11 @@ if (player.vx > 10)
 {
     player.vx=10
 }
-
+if(player.vx < -10)
+{
+    player.vx = -10;
+}
+// player movement
 player.x += player.vx
 
 
