@@ -86,11 +86,6 @@ this.hitBoxRects = function()
 this.move = function()
 {
 
-    this.vy = this.vy + this.gravity/10;
-
-this.x = this.x + this.vx;
-this.y = this.y + this.vy;
-
     this.x += this.vx;
     this.y += this.vy;
 }
@@ -98,11 +93,11 @@ this.y = this.y + this.vy;
 
 this.left = function() 
 {
-    return this.x - this.width/2;
+    return this.x - this.width/3.5;
 }
 this.right = function() 
 {
-    return this.x + this.width/2;
+    return this.x + this.width/3.5;
 }
 
 this.top = function() 
@@ -113,23 +108,12 @@ this.bottom = function()
 {
     return this.y + this.height/2;
 }
-this.farLeft=function()
-{
 
-}
-this.middleRight = function()
-{
-return this.x + this.width/6
-}
-this.middleLeft = function()
-{
- return this.x - this.width/6
-}
 
 this.hitTestObject = function(obj)
 {
-    if(this.left() < obj.middleLeft() && 
-       this.right() > obj.middleRight() &&
+    if(this.left() < obj.right() && 
+       this.right() > obj.left() &&
        this.top() < obj.bottom() &&
        this.bottom() > obj.top())
     {

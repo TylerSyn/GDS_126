@@ -31,6 +31,7 @@ ball.vx=0;
 ball.gravity = 1;
 ball.vy= 0;
 player.vx = 0;
+ball.force = 1;
 
 
 
@@ -99,6 +100,11 @@ player.x += player.vx
         ball.vy = -ball.vy * .67
         ball.y = canvas.height - 40;
     }
+    if(ball.y < 0 + 40)
+    {
+        ball.vy *= -1;
+        ball.y = 0 + 40;
+    }
     if(ball.x > canvas.width - 40)
     {
         ball.vx = -ball.vx;
@@ -110,14 +116,36 @@ player.x += player.vx
         ball.x = 0 + 40;
     }
 
+    // ball gravity
+    ball.vy += ball.gravity;
 
 
     //player and ball collision
-   if( ball.hitTestObject(player))
+   if( player.hitTestObject(ball))
    {
     console.log("hit")
-    ball.vy = -5;
+    ball.vy = -35;
+
+    if(ball.x > player.x + player.width/6 && ball.x < player.x + player.width/3)
+    {
+        ball.vx = ball.force;
+    }
+    if(ball.x > player.x + player.width/3 && ball.x < player.x + player.width/3 + player.width/6)
+    { 
+        ball.vx = ball.force * 5;
+    }
+    if(ball.x < player.x - player.width/6 && ball.x > player.x - player.width/3)
+    {
+        ball.vx = ball.force * -1;
+    }
+    if(ball.x < player.x - player.width/3 && ball.x > player.x - player.width/3 - player.width/6)
+    {   
+        ball.vx = ball.force * -5;
+    }
+
+
     score ++;
+    console.log(score);
    }
 
    if (ball.y > canvas.height - 50 )
@@ -134,10 +162,11 @@ player.x += player.vx
 
    
     //draw objects 
+    console.log(ball.vy)
     player.drawRect();
     ball.move();
     ball.drawCircle();
-    player.hitBoxRects();
+    //player.hitBoxRects();
     paddleLine.drawLine();
     scoreboard.drawScore();
 }
