@@ -130,15 +130,18 @@ player.x += player.vx
     {
         ball.vx = ball.force;
     }
-    if(ball.x > player.x + player.width/3 && ball.x < player.x + player.width/3 + player.width/6)
+
+    if(ball.x > player.x + player.width/3)
     { 
         ball.vx = ball.force * 5;
     }
+
     if(ball.x < player.x - player.width/6 && ball.x > player.x - player.width/3)
     {
         ball.vx = ball.force * -1;
     }
-    if(ball.x < player.x - player.width/3 && ball.x > player.x - player.width/3 - player.width/6)
+
+    if(ball.x < player.x - player.width/3 )
     {   
         ball.vx = ball.force * -5;
     }

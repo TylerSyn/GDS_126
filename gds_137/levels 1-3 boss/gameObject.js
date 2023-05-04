@@ -25,7 +25,7 @@ this.drawRect = function()
 this.drawScore = function()
 {
 context.save();
-context.font = "16px ariel black";
+context.font = "16px arial black";
 context.fillStyle = '#555555';
 context.fillText("Score : " + score , 80,25,);
 context.restore();
