@@ -15,6 +15,19 @@ var player;
 	follower = new GameObject();
 	follower.x = 0;
 	follower.y = 0;
+
+	follower2 = new GameObject();
+	follower2.x = 0;
+	follower2.y = 0;
+
+	follower3 = new GameObject();
+	follower3.x = 0;
+	follower3.y = 0;
+
+	follower4 = new GameObject();
+	follower4.x = 0;
+	follower4.y = 0;
+	
 	
 	//friction
 	var fX = .80;
@@ -45,16 +58,17 @@ function animate()
 
 	
 	/*-----------These move the follower-----------------*/
-	//magnet(); //- eases the follower towards the player - 
+	magnet(); //- eases the follower towards the player - 
 	point(); //- points at the player
 	//follow(); //- follows the player
 	//orbit(); //- orbits the player using physics
-	revolve(); //- orbits the player without physics.
+	//revolve(); //- orbits the player without physics.
 	//sinWave(); //- moves the follower in a sin wave pattern from left to right
 	
 	
 	player.drawTriangle();
 	follower.drawTriangle();
+
 }
 
 function angularMovement()
@@ -109,12 +123,13 @@ function angularMovement()
 	var radius = .25;
 function revolve()
 {
+
 	angle-=5;
 	var radians = angle * Math.PI/180;
 
 	follower.x = player.x + Math.cos(radians) * radius;
 	follower.y = player.y + Math.sin(radians) * radius;
-	radius += .25;
+	radius += .01;
 }
 	
 function magnet()
@@ -142,6 +157,7 @@ function point()
 	var radians = Math.atan2(dy, dx);
 	
 	follower.angle = radians * 180/Math.PI;
+
 }
 
 function follow()
