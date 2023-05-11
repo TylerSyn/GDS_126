@@ -26,7 +26,18 @@ var player;
 		//	3.set each particle's y property to a random number from 0 - the canvas.height
 	
 	//---------------------------------------------------------------------------------------------------------------
-	
+	var amount = 12;
+
+particles=[];
+
+for(i =0; i < amount; i++)
+{
+particles[i]=new GameObject()
+particles[i].x =  Math.random() * (canvas.width - 0) + 0;
+particles[i].y = Math.random() * (canvas.height - 0) + 0;
+}
+
+	// stop my code start jay's
 	var fX = .85;
 	var fY = .97;
 	
@@ -44,7 +55,10 @@ function animate()
 	//--------------------------------------Step 2: Draw Particles---------------------------------------------------------
 	//DrawRect()for each particle using a for loop.
 	//The for loop should use the particles.length for its limit
-	
+	for(i=0; i< particles.length; i++)
+	{
+		particles[i].drawRect();
+	}
 	
 	//----------------------------------------------------------------------------------------------------------------------
 }
