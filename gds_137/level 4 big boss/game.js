@@ -52,11 +52,11 @@ function animate()
     {
         if(a)
         {
-            player.vx += -player.ax * player.force * 2;
+            player.vx += -player.ax * player.force * 3;
         }
         if(d)
         {
-            player.vx += player.ax * player.force * 2;
+            player.vx += player.ax * player.force * 3;
         }
     }
     else
