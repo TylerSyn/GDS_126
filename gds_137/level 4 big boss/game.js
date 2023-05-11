@@ -14,7 +14,7 @@ var player;
 
 	platform0 = new GameObject();
 		platform0.width = 2000;
-		platform0.x = platform0.width/2;
+		platform0.x = platform0.width/2 - 150;
 		platform0.y = canvas.height - platform0.height/2;
 		platform0.color = "#66ff33";
 		
