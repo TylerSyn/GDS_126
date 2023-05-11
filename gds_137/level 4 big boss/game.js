@@ -136,6 +136,5 @@ function animate()
 
 	//Show hit points
 	player.drawRect();
-	goal.drawCircle();
 }
 
