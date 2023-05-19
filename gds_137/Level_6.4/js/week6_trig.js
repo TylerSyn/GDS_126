@@ -44,7 +44,7 @@ function animate()
 	//--------------------------Place the bullet at the tip of the gun turret instead of at its center-------------------------
 
 		bullet.x = gun.x + dx/10;
-		bullet.y = gun.y - 70 ;
+		bullet.y = gun.y + dy/9 ;
 
 
 	//--------------------------------------------------------------------------------------------------------------------------
