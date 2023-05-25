@@ -47,7 +47,7 @@ states[0]=function()
 
     if(space)
     {
-        Time = 100000;
+        Time = 10000;
         currentState = 1;
 		timerEngage = false;
 		player = new GameObject({x:100, y:canvas.height/2-100});

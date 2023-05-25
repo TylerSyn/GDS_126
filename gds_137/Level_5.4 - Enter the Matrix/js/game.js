@@ -24,7 +24,7 @@ var player;
 		particles[i] = new GameObject({width:10, height:10});
 		
 		var randomColor = Math.round(Math.random());
-		particles[i].color = colors[randomColor]
+		particles[i].color = "green"
 	
 		particles[i].x = Math.random() * canvas.width;
 		particles[i].y = Math.random() * canvas.height;
