@@ -47,30 +47,34 @@ states[0]=function()
 
     if(space)
     {
-        Time = 100000;
+        Time = 10000;
         currentState = 1;
 		timerEngage = false;
 		player = new GameObject({x:100, y:canvas.height/2-100});
 
 		platform0 = new GameObject();
-			platform0.width = 300;
+			platform0.width = 334;
 			platform0.x = canvas.width/2 - 350 ;
 			platform0.y = canvas.height - platform0.height/2;
 			platform0.color = "#66ff33";
-			//platform that move up/down
+			//platform Ice
 			platform1 = new GameObject();
-			platform1.width = 300;
-			platform1.x = canvas.width/2 - platform1.width/6 ;
+			platform1.width = 334;
+			platform1.x = canvas.width/2 - 20 ;
 			platform1.y = canvas.height - platform1.height/2;
 			platform1.color = "#03fcec";
-			platform1.vy=-2;
-			//platform moving side to side
+			//platform gravity up
 			platform2 = new GameObject();
-			platform2.width = 300;
-			platform2.x = canvas.width/2 + platform2.width/2 ;
-			platform2.y = canvas.height - platform2.height/2;
+			platform2.width = 1200;
+			platform2.x = canvas.width/2 ;
+			platform2.y = 0 + platform2.height/2;
 			platform2.color = "#ca03fc";
-			platform2.vx = 2;
+			//platform gravity down
+			platform3 = new GameObject();
+			platform3.width = 334;
+			platform3.x = canvas.width - platform3.width/2 -17;
+			platform3.y = canvas.height - platform3.height/2;
+			platform3.color = "#ca03fc";
 			
     }
 
@@ -172,35 +176,51 @@ if(Time <= 0)
 		player.y++;
 		player.vy = 0;
 	}
-//platform 1
-	while(platform1.hitTestPoint(player.bottom()) && player.vy >=0)
-	{
-		player.y--;
-		player.vy = 0;
-		player.canJump = true;
-	}
-	while(platform1.hitTestPoint(player.left()/2) && player.vx <=0)
-	{
-		player.x++;
-		player.vx = 0;
-	}
-	while(platform1.hitTestPoint(player.right()/2) && player.vx >=0)
-	{
-		player.x--;
-		player.vx = 0;
-	}
+//platform 1 ice
+
+if(player.hitTestObject(platform1))
+{
+	player.y =canvas.height - platform1.height - player.height/2;
+	player.vy = 0;
+	player.canJump = true;
+	fX=.95;
+}
+else
+{
+	fX =.85;
+}
+	// if(platform1.hitTestPoint(player.bottom()) && player.vy >=0)
+	// {
+	// 	player.y--;
+	// 	player.vy = 0;
+	// 	player.canJump = true;
+	// 	fX=.95;
+	// }
+	// else{
+	// 	fX =.85;
+	// }
+
+	// while(platform1.hitTestPoint(player.left()/2) && player.vx <=0)
+	// {
+	// 	player.x++;
+	// 	player.vx = 0;
+	// }
+	// while(platform1.hitTestPoint(player.right()/2) && player.vx >=0)
+	// {
+	// 	player.x--;
+	// 	player.vx = 0;
+	// }
 	// while(platform1.hitTestPoint(player.top()) && player.vy <=0)
 	// {
 	// 	player.y++;
 	// 	player.vy = 0;
 	// }
-	//platform 2
+	//platform 2 down
 	while(platform2.hitTestPoint(player.bottom()) && player.vy >=0)
 	{
 		player.y--;
 		player.vy = 0;
 		player.canJump = true;
-		player.x += platform2.vx
 	}
 	while(platform2.hitTestPoint(player.left()) && player.vx <=0)
 	{
@@ -213,6 +233,33 @@ if(Time <= 0)
 		player.vx = 0;
 	}
 	while(platform2.hitTestPoint(player.top()) && player.vy <=0)
+	{
+		player.y++;
+		player.vy = 0;
+		gravity = 1;
+		player.canJump=true;
+	}
+
+	//platform 3 up
+	while(platform3.hitTestPoint(player.bottom()) && player.vy >=0)
+	{
+		player.y--;
+		player.vy = 0;
+		player.canJump = true;
+		player.x += platform2.vx
+		gravity = -1
+	}
+	while(platform3.hitTestPoint(player.left()) && player.vx <=0)
+	{
+		player.x++;
+		player.vx = 0;
+	}
+	while(platform3.hitTestPoint(player.right()) && player.vx >=0)
+	{
+		player.x--;
+		player.vx = 0;
+	}
+	while(platform3.hitTestPoint(player.top()) && player.vy <=0)
 	{
 		player.y++;
 		player.vy = 0;
@@ -238,7 +285,7 @@ if(Time <= 0)
 	}
 
 
-	//platform 1 movement
+	//platform movement
 	if(timerEngage)
 	{
 		if(platform1.y < 200)
@@ -271,6 +318,7 @@ if(Time <= 0)
 	platform0.drawRect();
 	platform1.drawRect();
 	platform2.drawRect();
+	platform3.drawRect();
 
 	//Show hit points
 	player.drawRect();
