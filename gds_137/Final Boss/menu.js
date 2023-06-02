@@ -1,6 +1,10 @@
 var canvas = document.getElementById("canvas");
 canvas.addEventListener("mousemove", track);
 canvas.addEventListener("click", instructions);
+canvas.addEventListener("click", diffPlatforms);
+canvas.addEventListener("click", movePlatforms);
+canvas.addEventListener("click", timer);
+canvas.addEventListener("click", running);
 
 var context = canvas.getContext("2d");
 
@@ -54,7 +58,59 @@ function instructions()
 	if(dx < 75 && dx > -75 && dy < 25 && dy > -25)
 	{
 
-        window.open("instuctions.html");
+        window.open("https://synottgds137.netlify.app/gds_137/final%20boss/instructions");
+		console.log("instructions");
+        console.log(dx);
+	}
+}
+
+function diffPlatforms()
+{
+	var dx = ex4.x - mouse.x;
+	var dy = ex4.y - mouse.y;
+	var dist = Math.sqrt(dx*dx + dy * dy);
+	if(dx < 75 && dx > -75 && dy < 25 && dy > -25)
+	{
+        window.open("https://synottgds137.netlify.app/gds_137/level%207%20boss/index.html");
+		console.log("instructions");
+        console.log(dx);
+	}
+}
+
+function movePlatforms()
+{
+	var dx = ex3.x - mouse.x;
+	var dy = ex3.y - mouse.y;
+	var dist = Math.sqrt(dx*dx + dy * dy);
+	if(dx < 75 && dx > -75 && dy < 25 && dy > -25)
+	{
+        window.open("https://synottgds137.netlify.app/gds_137/level%206%20boss/");
+		console.log("instructions");
+        console.log(dx);
+	}
+}
+
+function timer()
+{
+	var dx = ex2.x - mouse.x;
+	var dy = ex2.y - mouse.y;
+	var dist = Math.sqrt(dx*dx + dy * dy);
+	if(dx < 75 && dx > -75 && dy < 25 && dy > -25)
+	{
+        window.open("https://synottgds137.netlify.app/gds_137/level%205%20boss/");
+		console.log("instructions");
+        console.log(dx);
+	}
+}
+
+function running()
+{
+	var dx = ex1.x - mouse.x;
+	var dy = ex1.y - mouse.y;
+	var dist = Math.sqrt(dx*dx + dy * dy);
+	if(dx < 75 && dx > -75 && dy < 25 && dy > -25)
+	{
+        window.open("https://synottgds137.netlify.app/gds_137/level%204%20big%20boss/");
 		console.log("instructions");
         console.log(dx);
 	}
