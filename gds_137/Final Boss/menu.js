@@ -54,7 +54,7 @@ function instructions()
 	if(dx < 75 && dx > -75 && dy < 25 && dy > -25)
 	{
 
-        
+        window.open("instuctions.html");
 		console.log("instructions");
         console.log(dx);
 	}
